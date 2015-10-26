@@ -1,0 +1,33 @@
+Imagine you have a Sale Database consists of two tables:
+
+ Goods table
+>  goods(
+>    id int,
+>    name text
+>  );
+ Sales Table
+>  sales(
+>    id int,
+>    good_id int references goods(id),
+>    price double precision,
+>    sale_date date
+>  );
+
+First Task
+
+ Required to create sales statistics for each good.
+ This query must have following columns:
+ - good title
+ - minimum of saled goods
+ - minimum good price
+ - maximum good price
+
+
+This statistics should be collected for particular interval, orded by amount of saled goods.
+This statistics must have the full list of goods even if there are no sales of particular good in the interval.
+
+Second Task
+
+After some time understood that only one unique good ca be saled in one day.
+Thats why required to remove all unnecessary entries (if there are more than one sales in one day - remove everything except an entry with maximum ID).
+Make changes in Sales Table to prevent from the appearance of duplicate records.
